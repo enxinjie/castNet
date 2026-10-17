@@ -137,6 +137,7 @@ main p{
   margin-top: 5px;
   margin-bottom: 15px;
 }
+
 .container{
   border: 1px solid var(--line-clr);
   border-radius: 1em;
@@ -144,6 +145,20 @@ main p{
   padding: min(3em, 15%);
 
   h2, p { margin-top: 1em }
+}
+
+.submissionContainer{
+  border-radius: 1em;
+  margin-bottom: 20px;
+  padding: min(1em, 15%);
+
+  h2 { 
+    margin-top: 1em;
+    text-align: center;
+  }
+  p {
+    text-align: left
+  }
 }
 
 @media(max-width: 800px){
