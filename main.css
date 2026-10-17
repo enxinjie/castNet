@@ -147,11 +147,7 @@ main p{
   h2, p { margin-top: 1em }
 }
 
-.submissionContainer{
-  border-radius: 1em;
-  margin-bottom: 20px;
-  padding: min(1em, 15%);
-
+.form-container{
   h2 { 
     margin-top: 1em;
     text-align: center;
@@ -159,6 +155,7 @@ main p{
   p {
     text-align: left
   }
+
 }
 
 @media(max-width: 800px){
