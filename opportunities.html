@@ -45,8 +45,7 @@
 
   <main>
 
-    <!-- Hashtag navigation bar -->
-    
+\    
     <nav class="hashtag-bar" aria-label="Browse opportunities by hashtag">
 
       <span class="hashtag-label">EXPLORE BY TAG</span>
@@ -65,11 +64,9 @@
       </a>
 
     </nav>
-  <!-- Standalone filter component: copy this section into your page. -->
-    <section class="filter-component" id="opportunity-filters" aria-label="Filter opportunities">
+\    <section class="filter-component" id="opportunity-filters" aria-label="Filter opportunities">
         <div class="filter-tabs">
-            <!-- Field / Industry filter -->
-            <div class="filter-dropdown">
+\            <div class="filter-dropdown">
                 <button class="filter-button" id="field-filter-button" type="button" aria-expanded="false" aria-controls="field-dropdown">
                     <span>Field / Industry</span>
                     <span class="arrow" aria-hidden="true">⌄</span>
@@ -90,8 +87,9 @@
                 </div>
             </div>
 
-            <!-- Location filter, including a field for custom locations -->
-            <div class="filter-dropdown">
+    
+            
+          <div class="filter-dropdown">
                 <button class="filter-button" id="location-filter-button" type="button" aria-expanded="false" aria-controls="location-dropdown">
                     <span>Location</span>
                     <span class="arrow" aria-hidden="true">⌄</span>
@@ -111,7 +109,6 @@
                 </div>
             </div>
 
-            <!-- Type filter -->
             <div class="filter-dropdown">
                 <button class="filter-button" id="type-filter-button" type="button" aria-expanded="false" aria-controls="type-dropdown">
                     <span>Type</span>
@@ -126,7 +123,6 @@
                 </div>
             </div>
 
-            <!-- Time Period filter -->
             <div class="filter-dropdown">
                 <button class="filter-button" id="time-filter-button" type="button" aria-expanded="false" aria-controls="time-dropdown">
                     <span>Time Period</span>
@@ -143,17 +139,23 @@
             </div>
         </div>
 
-        <!-- Selected values appear here as removable chips. -->
         <div class="selected-filters" id="selected-filters" hidden>
             <div class="selected-chips" id="selected-chips" role="group" aria-label="Selected filters" aria-live="polite"></div>
             <button class="clear-all-button" id="clear-all-button" type="button">Clear All</button>
         </div>
-    <!-- Main opportunities content -->
-    <div class="container">
-      <h2>Opportunities</h2>
-      <p>Insert text here</p>
-    </div>
+<section class="container opportunities-container">
+  <h2 id="opportunities-heading">All Opportunities</h2>
 
+  <p id="opportunities-description">
+    Explore internships and programs designed to help you grow.
+  </p>
+
+  <div id="opportunities-list" class="opportunities-grid"></div>
+
+  <p id="no-opportunities" hidden>
+    No opportunities found for this hashtag yet.
+  </p>
+</section>
   </main>
 </body>
 </html>
