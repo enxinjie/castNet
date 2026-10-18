@@ -545,3 +545,28 @@ h1, h2 {
     }
 }
 
+
+
+.opportunity-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.apply-opportunity-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: var(--accent-clr);
+    color: var(--text-clr);
+    border: 1px solid var(--line-clr);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.apply-opportunity-button:hover {
+    background-color: var(--hover-clr);
+    transform: translateY(-2px);
+}
