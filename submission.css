@@ -627,3 +627,24 @@ h1, h2 {
         grid-template-columns: 1fr;
     }
 }
+
+/* Styling for form submit button matching the hashtag pill design */
+.submit-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  background-color: #F0E3D1;
+  border: 1px solid var(--line-clr);
+  border-radius: 20px;
+  color: var(--text-clr);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--hover-clr);
+  transform: translateY(2px);
+}
