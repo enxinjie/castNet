@@ -41,7 +41,6 @@ a:hover, button:hover {
   width: 250px;
   padding: 5px 1em;
   background-color: var(--base-clr);
-  background-color: linear-gradient(180deg, rgba(114, 167, 199, 1) 0%, rgba(67, 126, 167, 1) 100%);
   border-right: 1px solid var(--line-clr);
 
   position: sticky;
@@ -259,7 +258,6 @@ main p{
     margin-bottom: 24px;
 
     background-color: var(--base-clr);
-    background-color: color-mix(in srgb, var(--base-clr) 90%, transparent);
     border: 1px solid var(--line-clr);
     border-radius: 12px;
 
