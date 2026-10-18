@@ -1,0 +1,234 @@
+/* Component colors and typography are scoped so this can be embedded in another page. */
+.filter-component,
+.filter-component * {
+    box-sizing: border-box;
+}
+
+.filter-component {
+    --filter-navy: #173b57;
+    --filter-border: #d6e4f0;
+    --filter-hover: #f0f7fc;
+    --filter-muted: #617687;
+    width: 100%;
+    color: var(--filter-navy);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* The buttons wrap naturally when there is not enough horizontal space. */
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-button {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border: 1px solid var(--filter-border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--filter-navy);
+    cursor: pointer;
+    font: inherit;
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.filter-button:hover,
+.filter-button[aria-expanded="true"] {
+    border-color: #b6d3e8;
+    background: var(--filter-hover);
+}
+
+.filter-button:focus-visible,
+.dropdown-menu input:focus-visible,
+.add-location-button:focus-visible,
+.remove-chip-button:focus-visible,
+.clear-all-button:focus-visible {
+    outline: 2px solid #4d91c5;
+    outline-offset: 2px;
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1;
+    transition: transform 180ms ease;
+}
+
+.filter-button[aria-expanded="true"] .arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown panels sit below their own filter button. */
+.dropdown-menu {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 290px;
+    max-width: calc(100vw - 24px);
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 8px;
+    border: 1px solid var(--filter-border);
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgb(23 59 87 / 12%);
+}
+
+.dropdown-menu[hidden],
+.selected-filters[hidden] {
+    display: none;
+}
+
+.dropdown-heading {
+    margin: 4px 8px 8px;
+    color: var(--filter-muted);
+    font-size: 12px;
+}
+
+.dropdown-option {
+    display: flex;
+    min-height: 36px;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 1.35;
+}
+
+.dropdown-option:hover {
+    background: var(--filter-hover);
+}
+
+.dropdown-option input {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    accent-color: #2779b5;
+}
+
+/* A typed location is added to the same chip list as checkbox selections. */
+.custom-location {
+    margin: 8px 4px 4px;
+    padding-top: 10px;
+    border-top: 1px solid #e8eff4;
+}
+
+.location-label {
+    display: block;
+    margin: 0 4px 7px;
+    color: var(--filter-muted);
+    font-size: 12px;
+}
+
+.location-entry {
+    display: flex;
+    gap: 6px;
+}
+
+.location-entry input {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 9px;
+    border: 1px solid var(--filter-border);
+    border-radius: 6px;
+    color: var(--filter-navy);
+    font: inherit;
+}
+
+.add-location-button {
+    padding: 7px 10px;
+    border: 1px solid var(--filter-border);
+    border-radius: 6px;
+    background: var(--filter-hover);
+    color: var(--filter-navy);
+    cursor: pointer;
+    font: inherit;
+}
+
+.add-location-button:hover {
+    background: #e4f1fa;
+}
+
+/* Selected filter chips appear directly below the row of buttons. */
+.selected-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.selected-chips {
+    display: contents;
+}
+
+.filter-chip {
+    display: inline-flex;
+    min-height: 28px;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 6px 3px 10px;
+    border: 1px solid var(--filter-border);
+    border-radius: 999px;
+    background: #f7fbfe;
+    color: var(--filter-navy);
+    font-size: 13px;
+}
+
+.remove-chip-button {
+    display: inline-grid;
+    width: 19px;
+    height: 19px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--filter-navy);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-chip-button:hover {
+    background: #e4f1fa;
+}
+
+.clear-all-button {
+    padding: 4px 6px;
+    border: 0;
+    background: transparent;
+    color: var(--filter-navy);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .filter-tabs {
+        gap: 7px;
+    }
+
+    .dropdown-menu {
+        width: min(290px, calc(100vw - 24px));
+    }
+
+    .filter-dropdown:nth-child(n + 3) .dropdown-menu {
+        right: 0;
+        left: auto;
+    }
+}
