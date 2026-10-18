@@ -10,6 +10,12 @@
   />
   <link rel="stylesheet" href="main.css">
   <script type="text/javascript" src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="search.css">
+  <script src="searchbar.js" defer></script>
 </head>
 <body>
   <nav id="sidebar">
@@ -63,10 +69,99 @@
       </a>
 
     </nav>
-  
-    <!-- Main opportunities content -->
-      <h2>Opportunities</h2>
+    <section class="filter-component" id="opportunity-filters" aria-label="Filter opportunities">
+        <div class="filter-tabs">
+            <div class="filter-dropdown">
+                <button class="filter-button" id="field-filter-button" type="button" aria-expanded="false" aria-controls="field-dropdown">
+                    <span>Field / Industry</span>
+                    <span class="arrow" aria-hidden="true">⌄</span>
+            </button>
+                <div class="dropdown-menu" id="field-dropdown" aria-labelledby="field-filter-button" hidden>
+                    <p class="dropdown-heading">Choose fields or industries</p>
+                    <label class="dropdown-option"><input type="checkbox" value="Technology" data-filter-group="field" data-selection-key="field:technology">Technology</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Healthcare" data-filter-group="field" data-selection-key="field:healthcare">Healthcare</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Business &amp; Finance" data-filter-group="field" data-selection-key="field:business &amp; finance">Business &amp; Finance</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Engineering" data-filter-group="field" data-selection-key="field:engineering">Engineering</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Arts &amp; Design" data-filter-group="field" data-selection-key="field:arts &amp; design">Arts &amp; Design</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Education" data-filter-group="field" data-selection-key="field:education">Education</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Government &amp; Public Service" data-filter-group="field" data-selection-key="field:government &amp; public service">Government &amp; Public Service</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Science &amp; Research" data-filter-group="field" data-selection-key="field:science &amp; research">Science &amp; Research</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Marketing &amp; Communications" data-filter-group="field" data-selection-key="field:marketing &amp; communications">Marketing &amp; Communications</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Nonprofit" data-filter-group="field" data-selection-key="field:nonprofit">Nonprofit</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Other" data-filter-group="field" data-selection-key="field:other">Other</label>
+                </div>
+            </div>
 
+    
+            
+          <div class="filter-dropdown">
+                <button class="filter-button" id="location-filter-button" type="button" aria-expanded="false" aria-controls="location-dropdown">
+                    <span>Location</span>
+                    <span class="arrow" aria-hidden="true">⌄</span>
+                </button>
+                <div class="dropdown-menu" id="location-dropdown" aria-labelledby="location-filter-button" hidden>
+                    <p class="dropdown-heading">Choose a work arrangement</p>
+                    <label class="dropdown-option"><input type="checkbox" value="Remote" data-filter-group="location" data-selection-key="location:remote">Remote</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Hybrid" data-filter-group="location" data-selection-key="location:hybrid">Hybrid</label>
+                    <label class="dropdown-option"><input type="checkbox" value="In-Person" data-filter-group="location" data-selection-key="location:in-person">In-Person</label>
+                    <div class="custom-location">
+                        <label class="location-label" for="custom-location-input">Add a city, state, or location</label>
+                        <div class="location-entry">
+                            <input id="custom-location-input" type="text" placeholder="For example, Seattle, WA">
+                            <button class="add-location-button" id="add-location-button" type="button">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-dropdown">
+                <button class="filter-button" id="type-filter-button" type="button" aria-expanded="false" aria-controls="type-dropdown">
+                    <span>Type</span>
+                    <span class="arrow" aria-hidden="true">⌄</span>
+                </button>
+                <div class="dropdown-menu" id="type-dropdown" aria-labelledby="type-filter-button" hidden>
+                    <p class="dropdown-heading">Choose opportunity types</p>
+                    <label class="dropdown-option"><input type="checkbox" value="Paid" data-filter-group="type" data-selection-key="type:paid">Paid</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Unpaid" data-filter-group="type" data-selection-key="type:unpaid">Unpaid</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Full-Time" data-filter-group="type" data-selection-key="type:full-time">Full-Time</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Part-Time" data-filter-group="type" data-selection-key="type:part-time">Part-Time</label>
+                </div>
+            </div>
+
+            <div class="filter-dropdown">
+                <button class="filter-button" id="time-filter-button" type="button" aria-expanded="false" aria-controls="time-dropdown">
+                    <span>Time Period</span>
+                    <span class="arrow" aria-hidden="true">⌄</span>
+                </button>
+                <div class="dropdown-menu" id="time-dropdown" aria-labelledby="time-filter-button" hidden>
+                    <p class="dropdown-heading">Choose a time period</p>
+                    <label class="dropdown-option"><input type="checkbox" value="Summer" data-filter-group="time" data-selection-key="time:summer">Summer</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Fall" data-filter-group="time" data-selection-key="time:fall">Fall</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Winter" data-filter-group="time" data-selection-key="time:winter">Winter</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Spring" data-filter-group="time" data-selection-key="time:spring">Spring</label>
+                    <label class="dropdown-option"><input type="checkbox" value="Year-Round" data-filter-group="time" data-selection-key="time:year-round">Year-Round</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="selected-filters" id="selected-filters" hidden>
+            <div class="selected-chips" id="selected-chips" role="group" aria-label="Selected filters" aria-live="polite"></div>
+            <button class="clear-all-button" id="clear-all-button" type="button">Clear All</button>
+        </div>
+    <!-- Main opportunities content -->
+    <section class="container opportunities-container">
+  <h2 id="opportunities-heading">All Opportunities</h2>
+
+  <p id="opportunities-description">
+    Browse internships and discover your next opportunity.
+  </p>
+
+  <div id="opportunities-list" class="opportunities-grid"></div>
+
+  <p id="no-opportunities" hidden>
+    No opportunities found for this hashtag yet.
+  </p>
+</section>
   </main>
 </body>
 </html>
