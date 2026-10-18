@@ -56,10 +56,14 @@ const demoOpportunities = [
     type: "Paid Internship",
     period: "Summer",
     description:
-      "Help analyze environmental data and support community sustainability projects.",
-    tags: ["STEM", "Paid", "LearningDisabled"]
+  "Help analyze environmental data and support community sustainability projects.",
+tags: ["STEM", "Paid", "LearningDisabled"],
+accessibility: [
+  "Flexible work hours",
+  "Accessible training materials",
+  "Interview accommodations available"
+],
   },
-
   {
     id: 3,
     title: "First-Generation Student Success Intern",
@@ -176,8 +180,14 @@ const demoOpportunities = [
     type: "Unpaid Internship",
     period: "Spring",
     description:
-      "Help design clear, accessible learning materials for students with different learning needs.",
-    tags: ["LearningDisabled", "HardofHearing"]
+  "Help design clear, accessible learning materials for students with different learning needs.",
+tags: ["LearningDisabled", "HardofHearing"],
+accessibility: [
+  "Interview accommodations available",
+  "Flexible deadlines",
+  "Accessible learning materials",
+  "Mentorship for neurodivergent students"
+]
   },
   {
     id: 12,
@@ -242,6 +252,21 @@ if (opportunityList) {
           <span>${opportunity.pay}</span>
           <span>${opportunity.period}</span>
         </div>
+${opportunity.accessibility ? `
+  <div class="accessibility-box">
+    <h4>Accessibility & Inclusion ♿</h4>
+
+    <p class="accessibility-label">
+      Support offered by this opportunity
+    </p>
+
+    <ul class="accessibility-list">
+      ${opportunity.accessibility.map(item => `
+        <li>${item}</li>
+      `).join("")}
+    </ul>
+  </div>
+` : ""}
 
         <p class="opportunity-description">
           ${opportunity.description}
