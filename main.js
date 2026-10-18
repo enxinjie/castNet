@@ -259,7 +259,7 @@ if (opportunityList) {
         </div>
 ${opportunity.accessibility ? `
   <div class="accessibility-box">
-    <h4>Accessibility & Inclusion ♿</h4>
+    <h4>Accessibility & Inclusion ♿︎</h4>
 
     <p class="accessibility-label">
       Support offered by this opportunity
