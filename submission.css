@@ -17,7 +17,7 @@ html{
 }
 body{
   background: #F0E3D1;
-  /*background: linear-gradient(180deg, rgba(114, 167, 199, 1) 0%, rgba(67, 126, 167, 1) 100%);*/
+  background: linear-gradient(180deg, #F0E3D1 0%, #E3DDE0 45%, #D1DEF0 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
