@@ -200,7 +200,12 @@ accessibility: [
     period: "Fall",
     description:
       "Research inclusive classroom practices and help summarize findings for educators.",
-    tags: ["LearningDisabled", "STEM", "Paid"]
+    tags: ["LearningDisabled", "STEM", "Paid"],
+    accessibility: [
+      "Flexible work hours",
+      "Accessible research materials",
+      "Interview accommodations available"
+    ]
   }
 ];
 
