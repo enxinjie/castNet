@@ -9,6 +9,7 @@
       content="CastNet Opportunities Submissions"
   />
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="submission.css">
   <script type="text/javascript" src="main.js" defer></script>
 </head>
 <body>
@@ -41,20 +42,24 @@
     </ul>
   </nav>
   <main>
-    <div class="container">
+    <div class="container" class="date-input-wrapper">
       <h2>Submit Opportunities</h2>
-      <p>Insert text here</p>
       <form>
         <label for="internship-name">Internship Name:</label>
         <input type="text" id="internship-name" name="internship-name" required>
+        <br>
         <label for="company-name">Company Name:</label>
         <input type="text" id="company-name" name="company-name" required>
+        <br>
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" required>
+        <br>
         <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea>
+        <input type="text" id="description" name="description" required>
+        <br>
         <label for="deadline">Deadline:</label>
         <input type="date" id="deadline" name="deadline" required>
+        <br>
         <button type="submit">Submit</button>
       </form>
     </div>
