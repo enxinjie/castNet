@@ -200,7 +200,12 @@ accessibility: [
     period: "Fall",
     description:
       "Research inclusive classroom practices and help summarize findings for educators.",
-    tags: ["LearningDisabled", "STEM", "Paid"]
+    tags: ["LearningDisabled", "STEM", "Paid"],
+    accessibility: [
+      "Flexible work hours",
+      "Accessible research materials",
+      "Interview accommodations available"
+    ]
   }
 ];
 
@@ -254,7 +259,7 @@ if (opportunityList) {
         </div>
 ${opportunity.accessibility ? `
   <div class="accessibility-box">
-    <h4>Accessibility & Inclusion ♿</h4>
+    <h4>Accessibility & Inclusion ♿︎</h4>
 
     <p class="accessibility-label">
       Support offered by this opportunity
