@@ -135,14 +135,13 @@ main{
 main p{
   color: var(--secondary-text-clr);
   margin-top: 5px;
-  margin-bottom: 15px;
 }
 
 .container{
   border: 1px solid var(--line-clr);
   border-radius: 1em;
   margin-bottom: 20px;
-  padding: min(1em, 15%);
+  padding: min(1em, 50%);
 
   h2, p { margin-top: 0 }
 }
@@ -166,8 +165,9 @@ main p{
     padding: 2em 1em 60px 1em;
   }
   .container{
-    border: none;
-    padding: 0;
+    border: 1px solid var(--line-clr);
+    border-radius: 1em;
+    margin-bottom: 20px;
   }
   #sidebar{
     height: 60px;
@@ -346,4 +346,5 @@ header img {
 h1, h2 {
   text-align: center;
   margin-top: 0;
+  padding-bottom: 5px;
 }
