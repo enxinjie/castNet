@@ -292,3 +292,26 @@ ${opportunity.accessibility ? `
 
   emptyMessage.hidden = filteredOpportunities.length > 0;
 }
+
+const form = document.getElementById("myForm");
+const responseMsg = document.getElementById("responseMessage");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default page refresh
+
+  // Disable button to prevent double submission
+  submitBtn.disabled = true;
+
+  // Show the brief message
+  responseMsg.textContent = "Your form has been submitted successfully!";
+  responseMsg.style.display = "block";
+
+  // Reset form and hide message after 4 seconds
+  setTimeout(() => {
+    responseMsg.style.display = "none";
+    submitBtn.disabled = false;
+    form.reset();
+  }, 4000);
+});
+
