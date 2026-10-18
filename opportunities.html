@@ -16,6 +16,16 @@
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="search.css">
   <script src="searchbar.js" defer></script>
+  <script src="bubbleScript.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
 </head>
 <body>
   <nav id="sidebar">
@@ -149,7 +159,8 @@
             <button class="clear-all-button" id="clear-all-button" type="button">Clear All</button>
         </div>
     <!-- Main opportunities content -->
-    <section class="container opportunities-container">
+    
+    <br>
   <h2 id="opportunities-heading">All Opportunities</h2>
 
   <p id="opportunities-description">
@@ -162,6 +173,7 @@
     No opportunities found for this hashtag yet.
   </p>
 </section>
+  <div id="bubbles-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
   </main>
 </body>
 </html>
