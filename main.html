@@ -10,6 +10,17 @@
   />
   <link rel="stylesheet" href="main.css">
   <script type="text/javascript" src="main.js" defer></script>
+  <script src="bubbleScript.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
+
 </head>
 <body>
   <nav id="sidebar">
@@ -83,6 +94,7 @@
       </p>
     </div>
 
+    <div id="bubbles-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
 </main>
 
 </body>
