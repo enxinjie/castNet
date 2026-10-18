@@ -191,6 +191,13 @@ const demoOpportunities = [
     description:
       "Research inclusive classroom practices and summarize findings for educators.",
     tags: ["LearningDisabled", "STEM", "Paid"]
+      "Research inclusive classroom practices and help summarize findings for educators.",
+    tags: ["LearningDisabled", "STEM", "Paid"],
+    accessibility: [
+      "Flexible work hours",
+      "Accessible research materials",
+      "Interview accommodations available"
+    ]
   }
 ];
 
@@ -242,6 +249,15 @@ function renderOpportunities() {
   opportunityList.innerHTML = filteredOpportunities.map((opportunity) => `
     <article class="opportunity-card">
       <h3>${opportunity.title}</h3>
+        <div class="opportunity-details">
+          <span>${opportunity.field}</span>
+          <span>${opportunity.location}</span>
+          <span>${opportunity.pay}</span>
+          <span>${opportunity.period}</span>
+        </div>
+${opportunity.accessibility ? `
+  <div class="accessibility-box">
+    <h4>Accessibility & Inclusion ♿︎</h4>
 
       <p class="opportunity-company">${opportunity.company}</p>
 
@@ -281,3 +297,25 @@ function renderOpportunities() {
 document.addEventListener("DOMContentLoaded", () => {
   renderOpportunities();
 });
+const form = document.getElementById("myForm");
+const responseMsg = document.getElementById("responseMessage");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default page refresh
+
+  // Disable button to prevent double submission
+  submitBtn.disabled = true;
+
+  // Show the brief message
+  responseMsg.textContent = "Your form has been submitted successfully!";
+  responseMsg.style.display = "block";
+
+  // Reset form and hide message after 4 seconds
+  setTimeout(() => {
+    responseMsg.style.display = "none";
+    submitBtn.disabled = false;
+    form.reset();
+  }, 4000);
+});
+

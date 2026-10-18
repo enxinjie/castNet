@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --base-clr: #BFD6DF;
+  --line-clr: #81959F;
+  --hover-clr: #DDBBB5;
+  --text-clr: #000000;
+  --accent-clr: #FECBB0;
+  --secondary-text-clr: #5D5A53;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+body{
+  background: #F0E3D1;
+  background: linear-gradient(180deg, #F0E3D1 0%, #E3DDE0 45%, #D1DEF0 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--text-clr);
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+#sidebar{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 250px;
+  padding: 5px 1em;
+  background-color: var(--base-clr);
+  border-right: 1px solid var(--line-clr);
+
+  position: sticky;
+  top: 0;
+  align-self: start;
+  transition: 300ms ease-in-out;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+#sidebar.close{
+  padding: 5px;
+  width: 60px;
+}
+#sidebar ul{
+  list-style: none;
+}
+#sidebar > ul > li:first-child{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  .logo{
+    font-weight: 600;
+  }
+}
+#sidebar ul li.active a{
+  color: var(--accent-clr);
+
+  svg{
+    fill: var(--accent-clr);
+  }
+}
+
+#sidebar a, #sidebar .dropdown-btn, #sidebar .logo{
+  border-radius: .5em;
+  padding: .85em;
+  text-decoration: none;
+  color: var(--text-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.dropdown-btn{
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+#sidebar svg{
+  flex-shrink: 0;
+  fill: var(--text-clr);
+}
+#sidebar a span, #sidebar .dropdown-btn span{
+  flex-grow: 1;
+}
+#sidebar a:hover, #sidebar .dropdown-btn:hover{
+  background-color: var(--hover-clr);
+}
+#sidebar .sub-menu{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+  > div{
+    overflow: hidden;
+  }
+}
+#sidebar .sub-menu.show{
+  grid-template-rows: 1fr;
+}
+.dropdown-btn svg{
+  transition: 200ms ease;
+}
+.rotate svg:last-child{
+  rotate: 180deg;
+}
+#sidebar .sub-menu a{
+  padding-left: 2em;
+}
+#toggle-btn{
+  margin-left: auto;
+  padding: 1em;
+  border: none;
+  border-radius: .5em;
+  background: none;
+  cursor: pointer;
+
+  svg{
+    transition: rotate 150ms ease;
+  }
+}
+#toggle-btn:hover{
+  background-color: var(--hover-clr);
+}
+
+
+main{
+  padding: min(30px, 7%);
+}
+main p{
+  color: var(--secondary-text-clr);
+  margin-top: 5px;
+}
+
+.container{
+  border: 1px solid var(--line-clr);
+  border-radius: 1em;
+  margin-bottom: 20px;
+  padding: min(1em, 50%);
+
+  h2, p { margin-top: 0 }
+  /* Base container spacing */
+.form-group {
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Textbox styling */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ffffff;
+  
+  /* The Secret Sauce: Borders and Box Sizing */
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Prevents padding from breaking width */
+  
+  /* Smooth animation when clicking into the box */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder styling */
+input[type="text"]::placeholder {
+  color: #aaaaaa;
+}
+
+/* Hover State */
+input[type="text"]:hover {
+  border-color: #a8a8a8;
+}
+
+/* Focus State (When clicked) */
+input[type="text"]:focus {
+  outline: none; /* Removes the ugly default browser outline */
+  border-color: #4a90e2; /* Modern accent color */
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15); /* Soft outer glow */
+}
+
+}
+
+.form-container{
+  h2 { 
+    margin-top: 1em;
+    text-align: center;
+  }
+  p {
+    text-align: left
+  }
+
+}
+
+@media(max-width: 800px){
+  body{
+    grid-template-columns: 1fr;
+  }
+  main{
+    padding: 2em 1em 60px 1em;
+  }
+  .container{
+    border: 1px solid var(--line-clr);
+    border-radius: 1em;
+    margin-bottom: 20px;
+  }
+  #sidebar{
+    height: 60px;
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid var(--line-clr);
+    padding: 0;
+    position: fixed;
+    top: unset;
+    bottom: 0;
+
+    > ul{
+      padding: 0;
+      display: grid;
+      grid-auto-columns: 60px;
+      grid-auto-flow: column;
+      align-items: center;
+      overflow-x: scroll;
+    }
+    ul li{
+      height: 100%;
+    }
+    ul a, ul .dropdown-btn{
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      border-radius: 0;
+      justify-content: center;
+    }
+
+    ul li span, ul li:first-child, .dropdown-btn svg:last-child{
+      display: none;
+    }
+
+    ul li .sub-menu.show{
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      box-sizing: border-box;
+      height: 60px;
+      width: 100%;
+      background-color: var(--hover-clr);
+      border-top: 1px solid var(--line-clr);
+      display: flex;
+      justify-content: center;
+
+      > div{
+        overflow-x: auto;
+      }
+      li{
+        display: inline-flex;
+      }
+      a{
+        box-sizing: border-box;
+        padding: 1em;
+        width: auto;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+/* Container styling */
+.date-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.date-input-wrapper label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Base input styling */
+input[type="date"] {
+  appearance: none; /* Removes OS-level default styling */
+  -webkit-appearance: none;
+  color: #1f2937;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Interactive focus states */
+input[type="date"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Style the native calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px;
+  filter: invert(0.4); /* Make it subtle gray instead of harsh black */
+  transition: all 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: #f3f4f6;
+  filter: invert(0.2); /* Darken slightly on hover */
+}
+
+.hashtag-bar {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+
+    background-color: var(--base-clr);
+    border: 1px solid var(--line-clr);
+    border-radius: 12px;
+
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 transparent;
+}
+
+@media screen and (max-width: 650px) {
+  .hashtag-bar, .hashtag-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hashtag-label {
+    /*flex-shrink: 0;*/
+    flex-wrap: wrap;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--secondary-text-clr);
+}
+
+.hashtag-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: max-content;
+}
+
+.hashtag-links a {
+    display: inline-block;
+    padding: 7px 12px;
+
+    background-color: #F0E3D1;
+    border: 1px solid var(--line-clr);
+    border-radius: 20px;
+
+    color: var(--text-clr);
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.hashtag-links a:hover {
+    background-color: var(--hover-clr);
+    transform: translateY(2px);
+}
+
+.all-hashtags {
+    flex-shrink: 0;
+    color: var(--text-clr);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.all-hashtags:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .hashtag-bar {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .hashtag-links {
+        order: 3;
+        flex-basis: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .all-hashtags {
+        margin-left: auto;
+    }
+}
+
+header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  max-height: 60 px;
+}
+
+header img {
+  min-width: 10%;
+  max-width: 20%;
+  height: auto;
+  display: block;
+  margin-bottom: 0;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+
+.opportunities-container {
+    margin-top: 20px;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.opportunity-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--line-clr);
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.opportunity-card h3 {
+    margin: 10px 0 5px;
+    line-height: 1.4;
+}
+
+
+.demo-label {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: var(--accent-clr);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+.opportunity-company {
+    font-weight: 600;
+    color: var(--secondary-text-clr);
+}
+.opportunity-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0;
+}
+
+.opportunity-details span {
+    padding: 4px 8px;
+    border: 1px solid var(--line-clr);
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.opportunity-description {
+    line-height: 1.6;
+}
+
+.opportunity-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.opportunity-tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.opportunity-tag:hover {
+    background-color: var(--hover-clr);
+}
+
+
+#no-opportunities {
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.opportunities-container {
+    margin-top: 20px;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.opportunity-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--line-clr);
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.opportunity-card h3 {
+    margin: 10px 0 5px;
+    line-height: 1.4;
+}
+
+.demo-label {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: var(--accent-clr);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.opportunity-company {
+    font-weight: 600;
+    color: var(--secondary-text-clr);
+}
+
+.opportunity-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0;
+}
+
+.opportunity-details span {
+    padding: 4px 8px;
+    border: 1px solid var(--line-clr);
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.opportunity-description {
+    line-height: 1.6;
+}
+
+.opportunity-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.opportunity-tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.opportunity-tag:hover {
+    background-color: var(--hover-clr);
+}
+
+#no-opportunities {
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styling for form submit button matching the hashtag pill design */
+.submit-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  background-color: #F0E3D1;
+  border: 1px solid var(--line-clr);
+  border-radius: 20px;
+  color: var(--text-clr);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--hover-clr);
+  transform: translateY(2px);
+}

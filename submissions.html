@@ -9,7 +9,19 @@
       content="CastNet Opportunities Submissions"
   />
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="submission.css">
   <script type="text/javascript" src="main.js" defer></script>
+  <script src="bubbleScript.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="searchbar.css"></script>
+  
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
 </head>
 <body>
   <nav id="sidebar">
@@ -41,23 +53,29 @@
     </ul>
   </nav>
   <main>
-    <div class="container">
+    <div class="container" class="date-input-wrapper">
       <h2>Submit Opportunities</h2>
-      <p>Insert text here</p>
       <form>
-        <label for="internship-name">Internship Name:</label>
+        <label for="internship-name">Opportunity Name:</label>
         <input type="text" id="internship-name" name="internship-name" required>
+        <br>
         <label for="company-name">Company Name:</label>
         <input type="text" id="company-name" name="company-name" required>
+        <br>
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" required>
+        <br>
         <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea>
+        <input type="text" id="description" name="description" required>
+        <br>
         <label for="deadline">Deadline:</label>
         <input type="date" id="deadline" name="deadline" required>
-        <button type="submit">Submit</button>
-      </form>
+        <br>
+        <br>
+        <button type="submit" class="submit-btn">Submit</button>  
+  `   </form>
     </div>
+    <div id="bubbles-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
   </main>
 </body>
 </html>

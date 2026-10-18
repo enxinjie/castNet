@@ -27,13 +27,21 @@ body{
   color: var(--text-clr);
   display: grid;
   grid-template-columns: auto 1fr;
+  margin-right: 35px;
+  cursor: url('/pointer/pointer.png'), auto;
 }
+
+a:hover, button:hover {
+  cursor: url('/pointer/whale-pointer.png'), pointer;
+}
+
 #sidebar{
   box-sizing: border-box;
   height: 100vh;
   width: 250px;
   padding: 5px 1em;
   background-color: var(--base-clr);
+  background-color: linear-gradient(180deg, rgba(114, 167, 199, 1) 0%, rgba(67, 126, 167, 1) 100%);
   border-right: 1px solid var(--line-clr);
 
   position: sticky;
@@ -42,6 +50,11 @@ body{
   transition: 300ms ease-in-out;
   overflow: hidden;
   text-wrap: nowrap;
+
+  background-image: url('sidebarTheme.jpeg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 #sidebar.close{
   padding: 5px;
@@ -146,9 +159,9 @@ main p{
   padding: min(1em, 50%);
 
   h2, p { margin-top: 0 }
+  background-color: color-mix(in srgb, var(--hover-clr) 25%, transparent);
+  
 }
-
-
 
 .form-container{
   h2 { 
@@ -246,6 +259,7 @@ main p{
     margin-bottom: 24px;
 
     background-color: var(--base-clr);
+    background-color: color-mix(in srgb, var(--base-clr) 90%, transparent);
     border: 1px solid var(--line-clr);
     border-radius: 12px;
 
@@ -350,6 +364,7 @@ h1, h2 {
   text-align: center;
   margin-top: 0;
   padding-bottom: 5px;
+  color: var(--text-clr);
 }
 
 @keyframes float-bubble {
@@ -376,6 +391,7 @@ h1, h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     margin-top: 20px;
+    margin-right: -20px;
 }
 
 .opportunity-card {
@@ -570,3 +586,41 @@ h1, h2 {
     background-color: var(--hover-clr);
     transform: translateY(-2px);
 }
+/* Accessibility information on opportunity cards */
+
+.accessibility-box {
+    background-color: #EAF4F8;
+    border-left: 4px solid #287A5B;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 18px 0;
+}
+
+.accessibility-box h4 {
+    margin: 0 0 12px 0;
+    color: var(--text-clr);
+}
+
+.accessibility-label {
+    font-size: 0.8rem;
+    color: var(--secondary-text-clr);
+    margin: -8px 0 10px 0;
+}
+
+.accessibility-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accessibility-list li {
+    margin: 5px 0;
+}
+
+.accessibility-list li::before {
+    content: "✓";
+    color: #287A5B;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
