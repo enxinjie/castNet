@@ -28,7 +28,13 @@ body{
   display: grid;
   grid-template-columns: auto 1fr;
   margin-right: 35px;
+  cursor: url('/pointer/pointer.png'), auto;
 }
+
+a:hover, button:hover {
+  cursor: url('/pointer/whale-pointer.png'), pointer;
+}
+
 #sidebar{
   box-sizing: border-box;
   height: 100vh;
