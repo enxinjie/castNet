@@ -545,3 +545,41 @@ h1, h2 {
     }
 }
 
+/* Accessibility information on opportunity cards */
+
+.accessibility-box {
+    background-color: #EAF4F8;
+    border-left: 4px solid #287A5B;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 18px 0;
+}
+
+.accessibility-box h4 {
+    margin: 0 0 12px 0;
+    color: var(--text-clr);
+}
+
+.accessibility-label {
+    font-size: 0.8rem;
+    color: var(--secondary-text-clr);
+    margin: -8px 0 10px 0;
+}
+
+.accessibility-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accessibility-list li {
+    margin: 5px 0;
+}
+
+.accessibility-list li::before {
+    content: "✓";
+    color: #287A5B;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
